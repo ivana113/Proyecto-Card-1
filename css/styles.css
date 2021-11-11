@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Kumbh+Sans:wght@400;700&family=Lexend+Deca&family=Poppins:wght@300;400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --font1:'Lexend Deca', sans-serif;
+    --font2:'Big Shoulders Display', cursive;
+    --bg-sedans: hsl(31, 77%, 52%);
+    --bg-suvs:hsl(184, 100%, 22%);
+    --bg-luxury:hsl(179, 100%, 13%);
+    --very-l-gray: hsl(0, 0%, 95%);
+}
+
+body{
+    
+    font-size: 15px;
+    font-family: var(--font1);
+    background: #edebe2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: var(--very-l-gray);
+}
+
+.container{
+    
+    width: 60%;
+    height: 60vh;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: 'sedans suvs luxury';
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.card__sedans{
+    grid-area: sedans;
+    background-color: var(--bg-sedans);
+}
+
+.card__suvs{
+    grid-area: suvs;
+    background-color: var(--bg-suvs);
+}
+
+.card__luxury{
+    grid-area: luxury;
+    background-color: var(--bg-luxury);
+}
+
+.card__sedans--margin-align,
+.card__suvs--margin-align,
+.card__luxury--margin-align{
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.card__ilustration{
+    width: 30%;
+}
+
+.card__title{
+    text-transform: uppercase;
+    font-family: var(--font2);
+    font-weight: 700;
+    font-size: 2.188rem;
+}
+
+.card__paragrah{
+    font-weight: 300;
+    text-align:left;
+    color: hsla(0, 0%, 100%, 0.75);
+}
+
+.card__btn{
+    border: none;
+    background-color: #fff;
+    width: 60%;
+    border-radius: 30px;
+    padding: 15px 20px;
+    color: var(--bg-sedans);
+    font-family: var(--font1);
+    font-weight:bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.card__btn--suvs{
+    color: var(--bg-suvs);
+}
+
+.card__btn--luxury{
+    color: var(--bg-luxury);
+}
+
+.card__btn:hover{
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+@media screen and (max-width:768px) {
+    
+    .container{  
+        width: 50%;
+        height: 90vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3,max-content);
+        grid-template-areas:
+        'sedans'
+        'suvs'
+        'luxury';
+        overflow: auto;
+       
+        
+    }
+
+    .card__btn{
+        width: 60%;
+    }
+
+    .card__sedans--margin-align,
+    .card__suvs--margin-align,
+    .card__luxury--margin-align{
+        padding: 70px 30px;
+        gap: 50px;
+    }
+
+    .card__paragrah{
+        margin-right: 40px;
+    }
+}
+
+
+@media screen and (max-width:480px) {
+    
+    .container{  
+        width: 80%;
+       
+    }
+
+    .card__paragrah{
+        font-size: 1.125rem;
+    }
+
+}
